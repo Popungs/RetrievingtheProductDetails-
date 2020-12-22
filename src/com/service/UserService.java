@@ -74,9 +74,9 @@ public class UserService implements UserDao {
 				if (inputName.equals(resName) && inputEmail.equals(resEmail)) {
 					System.out.println(("user validation is successfull"));
 					System.out.println("userInput was : " + inputName + " userEmail was : " + inputEmail);
-
+					Login logCredential = new Login(inputName,inputEmail);
 					HttpSession session = request.getSession();
-					session.setAttribute("sesname", resName);
+					session.setAttribute("sesname", logCredential);
 					
 					response.sendRedirect("Loginsuccess.jsp");
 
